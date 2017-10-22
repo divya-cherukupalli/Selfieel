@@ -24,7 +24,18 @@ import * as firebase from 'firebase';
 const LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
 const PROFILE_PLACEHOLDER_IMAGE_URL = '/assets/images/profile_placeholder.png';
 
+export class Entry {
+    date: Date;
+    emotion: string;
+}
 
+@Component({
+      selector: "testWidget",
+      template: "<div>
+      <p> emotion is {{entry.emotion}} </p> <br>
+      <p> date is {{entry.date}} </p>
+      </div>"
+})
 
 export class testWidget {
    import { Entry } from './entry';
@@ -35,14 +46,6 @@ export class testWidget {
        this.entry.date = new Date ("February 4, 2016 10:13:00");
    }
 }
-
-@Component({
-      selector: "testWidget",
-      template: "<div>
-      <p> emotion is {{entry.emotion}} </p> <br>
-      <p> date is {{entry.date}} </p>
-      </div>"
-})
 
 @Component({
   selector: 'app-root',
