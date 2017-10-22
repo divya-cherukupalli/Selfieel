@@ -18,7 +18,7 @@ import { Observable } from 'rxjs/Observable';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { MatSnackBar } from '@angular/material';
-import { Entry } from './entry';
+
 import * as firebase from 'firebase';
 
 const LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
@@ -30,15 +30,16 @@ export class Entry {
 }
 
 @Component({
-      selector: "testWidget",
-      template: "<div>
-      <p> emotion is {{entry.emotion}} </p> <br>
-      <p> date is {{entry.date}} </p>
-      </div>"
+      selector: 'testWidget',
+      template: `
+      <div>
+        <p>{{ entry.emotion }} ( {{ entry.emotion }} )</p>
+        <p>{{ entry.date }}</p>
+      </div>
+      `
 })
 
 export class testWidget {
-   import { Entry } from './entry';
    public entry: Entry;
    constructor(){
        this.entry = new Entry();

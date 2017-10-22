@@ -23,6 +23,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { MatSnackBarModule } from '@angular/material';
 
+import { testWidget } from './app.component';
 import { AppComponent } from './app.component';
 import { StylizePipe } from './stylize.pipe';
 import { environment } from '../environments/environment';
@@ -47,6 +48,7 @@ if (!environment.firebase) {
 @NgModule({
   declarations: [
     AppComponent,
+    testWidget,
     StylizePipe
   ],
   imports: [
